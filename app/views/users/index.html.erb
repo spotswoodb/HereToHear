@@ -1,0 +1,16 @@
+<h1>Donations#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+
+
+<% if @users.length == 0 %>
+     No current donations 
+    <% else %>
+    <% @users.each do |u| %>
+    <p>
+        First Name: <%= u.first_name %>
+        Last Name: <%= u.last_name %>
+        Email: <%= u.email %>
+        Username: <%= u.username %>
+    </p>
+    <% end %> 
+<% end %>
