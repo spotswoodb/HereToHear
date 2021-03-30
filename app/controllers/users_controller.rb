@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   
     def create
         @user = User.new(user_params)
-        if @user.save
+        if @user.valid?
+            @user.save
             redirect_to user_path(@user)
         else
             render :new
@@ -22,15 +23,23 @@ class UsersController < ApplicationController
     end
 
     def edit
-    end
-  
-    def update
-    end
-  
-    def delete
-    end
-  
+        @user = User.find_by_id(params[:id])
+      end
     
+    def update 
+        @user = user.find_by_id(params[:id])
+        @user.update(user_params(:email))
+    end 
+    
+    def destroy
+        @user = User.find_by_id(params[:id])
+        @user.destroy
+        redirect_to users_path
+    end 
+  
+    def login
+
+    end
 
 private
 
