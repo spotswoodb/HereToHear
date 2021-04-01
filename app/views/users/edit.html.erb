@@ -1,7 +1,7 @@
 <h1>Edit#Users</h1>
 
 
-<%= form_with url: edit_user_path do |f| %>
+<%= form_with model: @user do |f| %>
   <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2>
@@ -17,31 +17,20 @@
   </div>
 <% end %> 
 
-  <div class="field<%= ' field_with_errors' if @user.errors[:first_name].any? %>">
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
-  </div>
 
-
-  <div class="field<%= ' field_with_errors' if @user.errors[:last_name].any? %>">
     <%= f.label :last_name %>
     <%= f.text_field :last_name %> 
-  </div>
 
-  <div class="field<%= ' field_with_errors' if @user.errors[:email].any? %>">
     <%= f.label :email %>
     <%= f.email_field :email %>
-  </div>
 
-  <div class="field<%= ' field_with_errors' if @user.errors[:username].any? %>">
     <%= f.label :username %>
     <%= f.text_field :username %>
-  </div>
 
-  <div class="field<%= ' field_with_errors' if @user.errors[:password].any? %>">
     <%= f.label :password %>
     <%= f.password_field :password %>
-  </div>
 
   <!-- <%= f.hidden_field(:user_id, value: "1") %> -->
   <!-- <input type="hidden" name="user[user_id]" value="1"> -->

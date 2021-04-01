@@ -1,11 +1,19 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.email %>
-<%= @user.username %>
-
-<%= link_to 'Delete', user_path(@user), method: "delete" %>
+<div>
+    <p>
+    <strong>First Name: </strong><br>
+    <%= @user.first_name %><br>
+    <strong>Last Name: </strong><br>
+    <%= @user.last_name %><br>
+    <strong>Email: </strong><br>
+    <%= @user.email %><br>
+    <strong>Username: </strong><br>
+    <%= @user.username %><br>
+    </p>
+</div>
 
 <%= button_to "Delete", user_path(@user), method: 'delete' %>
+
+<%= link_to 'Edit Account Info', edit_user_path(@user) %>
